@@ -228,7 +228,7 @@ class _HomePageState extends State<HomePage> {
                               crossAxisCount: 2,
                               crossAxisSpacing: 16,
                               mainAxisSpacing: 16,
-                              childAspectRatio: 0.65,
+                              childAspectRatio: 0.6,
                             ),
                         itemCount: filteredBarang.length,
                         itemBuilder: (context, index) {
@@ -304,7 +304,7 @@ class _HomePageState extends State<HomePage> {
                                               fontSize: 16,
                                               fontWeight: FontWeight.bold,
                                             ),
-                                            maxLines: 2,
+                                            maxLines: 1,
                                             overflow: TextOverflow.ellipsis,
                                           ),
 

@@ -52,13 +52,13 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Image.asset('assets/fotoperusahaan.png', width: 150, height: 150),
-              // const SizedBox(height: 20),
-              const Text(
-                'LOGIN',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 40),
+              Image.asset('assets/fotoperusahaan.png', width: 200, height: 200),
+              const SizedBox(height: 20),
+              // const Text(
+              //   'LOGIN',
+              //   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              // ),
+              // const SizedBox(height: 40),
               TextField(
                 controller: _username,
                 decoration: InputDecoration(
