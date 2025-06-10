@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ta_prak_tpm/models/barang_model.dart';
+import 'package:ta_prak_tpm/pages/beli_page.dart';
 import 'package:ta_prak_tpm/services/barang_service.dart';
 
 class DetailPage extends StatelessWidget {
@@ -31,7 +32,7 @@ class DetailPage extends StatelessWidget {
           return Text("Error: ${snapshot.error}");
         } else if (snapshot.hasData) {
           final barang = snapshot.data!;
-          return _barang(barang);
+          return _barang(barang, context);
         } else {
           return const Center(child: CircularProgressIndicator());
         }
@@ -40,7 +41,7 @@ class DetailPage extends StatelessWidget {
   }
 
   // Widget untuk menampilkan isi detail pakaian
-  Widget _barang(Barang barang) {
+  Widget _barang(Barang barang, context) {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,6 +74,32 @@ class DetailPage extends StatelessWidget {
           _infoText("Merk", barang.merk),
           _infoText("Kondisi", barang.kondisi),
           _infoText("Harga", "Rp${barang.harga ?? 0}"),
+
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Center(
+              child: SizedBox(
+                width: 170,
+                height: 40,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BeliPage(id: id)),
+                    );
+                  },
+                  child: const Text("Beli", style: TextStyle(fontSize: 15)),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

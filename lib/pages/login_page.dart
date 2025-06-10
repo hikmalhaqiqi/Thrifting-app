@@ -54,11 +54,6 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Image.asset('assets/fotoperusahaan.png', width: 200, height: 200),
               const SizedBox(height: 20),
-              // const Text(
-              //   'LOGIN',
-              //   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-              // ),
-              // const SizedBox(height: 40),
               TextField(
                 controller: _username,
                 decoration: InputDecoration(
