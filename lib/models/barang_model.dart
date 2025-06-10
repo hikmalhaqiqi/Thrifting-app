@@ -1,4 +1,5 @@
 class Barang {
+  int? id;
   String? nama;
   String? kategori;
   String? deskripsi;
@@ -9,18 +10,21 @@ class Barang {
   String? kondisi;
   int? harga;
 
-  Barang(
-      {this.nama,
-      this.kategori,
-      this.deskripsi,
-      this.foto,
-      this.ukuran,
-      this.jenisKelamin,
-      this.merk,
-      this.kondisi,
-      this.harga});
+  Barang({
+    this.id,
+    this.nama,
+    this.kategori,
+    this.deskripsi,
+    this.foto,
+    this.ukuran,
+    this.jenisKelamin,
+    this.merk,
+    this.kondisi,
+    this.harga,
+  });
 
   Barang.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
     nama = json['nama'];
     kategori = json['kategori'];
     deskripsi = json['deskripsi'];
@@ -34,6 +38,7 @@ class Barang {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
     data['nama'] = this.nama;
     data['kategori'] = this.kategori;
     data['deskripsi'] = this.deskripsi;
