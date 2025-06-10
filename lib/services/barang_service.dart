@@ -4,7 +4,7 @@ import 'package:ta_prak_tpm/models/barang_model.dart';
 
 class BarangService {
   static const String baseUrl =
-      "https://api-tpm-server-283162572185.us-central1.run.app/Barang";
+      "https://api-tpm-server-298647753913.us-central1.run.app/Barang";
 
   static Future<List<Barang>> getBarang() async {
     final response = await http.get(Uri.parse(baseUrl));
