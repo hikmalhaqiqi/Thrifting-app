@@ -52,15 +52,17 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // Image.asset('assets/fotoperusahaan.png', width: 150, height: 150),
+              // const SizedBox(height: 20),
               const Text(
-                'LOGIN ADMIN',
+                'LOGIN',
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 40),
               TextField(
                 controller: _username,
                 decoration: InputDecoration(
-                  labelText: 'Username (NIM)',
+                  labelText: 'Email',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.0),
                   ),
@@ -105,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text(
                       "Register",
                       style: TextStyle(
-                        color: Colors.purple,
+                        color: Colors.blue,
                         decoration: TextDecoration.underline,
                       ),
                     ),
@@ -119,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: ElevatedButton(
                   onPressed: () => _login(context),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.blueGrey,
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 14.0),
                     shape: RoundedRectangleBorder(

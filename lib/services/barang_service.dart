@@ -21,7 +21,7 @@ class BarangService {
     final response = await http.get(Uri.parse("$baseUrl/$id"));
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      return Barang.fromJson(data["data"]);
+      return Barang.fromJson(data);
     } else {
       throw Exception('Barang tidak ditemukan');
     }

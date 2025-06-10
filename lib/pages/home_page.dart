@@ -85,10 +85,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Home'),
-        backgroundColor: Colors.blue,
+        title: const Text(
+          'Second Loop',
+          style: TextStyle(fontSize: 16, color: Colors.white),
+        ),
+        backgroundColor: Colors.blueGrey,
         actions: [
-          IconButton(onPressed: _logout, icon: const Icon(Icons.logout)),
+          IconButton(
+            onPressed: _logout,
+            icon: const Icon(Icons.logout, color: Colors.white),
+          ),
         ],
       ),
       body: FutureBuilder<List<Barang>>(
@@ -164,6 +170,7 @@ class _HomePageState extends State<HomePage> {
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton<String>(
                           value: selectedCategory,
+                          dropdownColor: Colors.white,
                           hint: const Text('Pilih Kategori'),
                           isExpanded: true,
                           icon: const Icon(Icons.arrow_drop_down),
