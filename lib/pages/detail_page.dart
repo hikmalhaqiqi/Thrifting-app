@@ -45,17 +45,18 @@ class DetailPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text('${barang.foto}'),
           AspectRatio(
             aspectRatio: 1, // Gambar 1:1, persegi
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.network(
-                barang.foto!,
+                'https://storage.googleapis.com/laporin_app/produkThrifting/foto-produk/f2430898-562e-44c7-a9e2-c4c3588566dd.jpg',
                 fit: BoxFit.cover,
                 width: double.infinity,
-                errorBuilder: (context, error, stackTrace) => const Center(
-                  child: Icon(Icons.broken_image, size: 50, color: Colors.grey),
-                ),
+                // errorBuilder: (context, error, stackTrace) => const Center(
+                //   child: Icon(Icons.broken_image, size: 50, color: Colors.grey),
+                // ),
               ),
             ),
           ),
@@ -72,6 +73,7 @@ class DetailPage extends StatelessWidget {
           _infoText("Gender ", barang.jenisKelamin),
           _infoText("Merk", barang.merk),
           _infoText("Kondisi", barang.kondisi),
+          _infoText("foto", barang.foto),
           _infoText("Harga", "Rp${barang.harga ?? 0}"),
         ],
       ),
