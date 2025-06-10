@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ta_prak_tpm/models/barang_model.dart';
 import 'package:ta_prak_tpm/pages/detail_page.dart';
+import 'package:ta_prak_tpm/pages/map_page.dart';
 import 'package:ta_prak_tpm/services/barang_service.dart';
 
 class HomePage extends StatefulWidget {
@@ -340,66 +341,6 @@ class _HomePageState extends State<HomePage> {
                                                   ),
                                                 ),
                                               ),
-
-                                              // Tombol hapus
-                                              InkWell(
-                                                onTap: () async {
-                                                  final confirmed = await showDialog(
-                                                    context: context,
-                                                    builder: (context) =>
-                                                        AlertDialog(
-                                                          title: const Text(
-                                                            "Hapus Barang",
-                                                          ),
-                                                          content: const Text(
-                                                            "Yakin ingin menghapus barang ini?",
-                                                          ),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                    context,
-                                                                    false,
-                                                                  ),
-                                                              child: const Text(
-                                                                "Batal",
-                                                              ),
-                                                            ),
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                    context,
-                                                                    true,
-                                                                  ),
-                                                              child: const Text(
-                                                                "Hapus",
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                  );
-
-                                                  if (confirmed == true) {
-                                                    // await BarangService.deleteBarang(item.id!);
-                                                    _refresh();
-                                                    // Reset filter setelah refresh
-                                                    originalBarang.clear();
-                                                    filteredBarang.clear();
-                                                  }
-                                                },
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
-                                                child: Container(
-                                                  padding: const EdgeInsets.all(
-                                                    4,
-                                                  ),
-                                                  // child: const Icon(
-                                                  //   Icons.delete,
-                                                  //   color: Colors.red,
-                                                  //   size: 20,
-                                                  // ),
-                                                ),
-                                              ),
                                             ],
                                           ),
                                         ],
@@ -416,6 +357,19 @@ class _HomePageState extends State<HomePage> {
             ],
           );
         },
+      ),
+
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MapPage()),
+          );
+        },
+        backgroundColor: Colors.blueGrey,
+        foregroundColor: Colors.white,
+        icon: const Icon(Icons.map),
+        label: const Text('Peta'),
       ),
     );
   }
